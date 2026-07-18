@@ -26,6 +26,7 @@ foreach ($jadwalRows as $r) {
             'biaya_konsultasi' => $r['biaya_konsultasi'],
             'no_hp' => $r['no_hp'],
             'email' => $r['email'],
+            'foto' => $r['foto'],
             'kota_list' => [],
             'klinik_list' => [],
             'jadwal_count' => 0,
@@ -149,8 +150,11 @@ $kliniks = $pdo->query("SELECT k.*, kt.nama_kota FROM klinik k LEFT JOIN kota kt
                 <div class="card h-100 border-0 shadow-sm" style="border-radius:14px;">
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:56px;height:56px;font-size:1.4rem;flex-shrink:0">
-                                <?= strtoupper(substr($d['nama_dokter'],0,1)) ?>
+                            <div class="avatar rounded-circle overflow-hidden d-flex align-items-center justify-content-center"
+     style="width:60px;height:60px;flex-shrink:0;">
+    <img src="<?= !empty($d['foto']) ? URL_DOKTER . e($d['foto']) : BASE_URL . 'assets/images/no-image.svg'; ?>"
+         alt="<?= e($d['nama_dokter']) ?>"
+         style="width:100%;height:100%;object-fit:cover;">
                             </div>
                             <div>
                                 <h6 class="mb-0 dokter-nama fw-bold"><?= e($d['nama_dokter']) ?></h6>
