@@ -44,8 +44,10 @@ if (empty($rows)) { echo '<p class="text-muted">Tidak ada dokter ditemukan.</p>'
         <div class="card h-100">
             <div class="card-body">
                 <div class="d-flex align-items-center gap-3 mb-2">
-                    <div class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width:50px;height:50px;font-size:1.2rem">
-                        <?= strtoupper(substr($r['nama_dokter'],0,1)) ?>
+                    <div class="avatar rounded-circle overflow-hidden" style="width:60px;height:60px;">
+    <img src="<?= !empty($r['foto']) ? URL_DOKTER . e($r['foto']) : BASE_URL . 'assets/images/no-image.svg'; ?>"
+         alt="<?= e($r['nama_dokter']) ?>"
+         style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div>
                         <h6 class="mb-0"><?= e($r['nama_dokter']) ?></h6>
