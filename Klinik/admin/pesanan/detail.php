@@ -76,7 +76,6 @@ require_once '../../includes/header_admin.php';
                 <p class="mb-1">Metode: <strong><?= e($pay['nama_metode'] ?? '-') ?></strong></p>
                 <p class="mb-1">Tujuan: <span><?php if (!empty($pay['id_metode']) && !empty($pay['metode_nomor'])): ?><?= e($pay['metode_tipe']==='bank' ? 'Rekening Bank' : 'E-Wallet') ?> <?= e($pay['metode_nomor']) ?> a.n. <?= e($pay['metode_pemilik']) ?><?php else: ?>-<?php endif; ?></span></p>
                 <p class="mb-1">Status: <?= status_badge($pay['status']) ?></p>
-                <?php if (!empty($pay['bukti_transfer'])): ?><img src="<?= URL_BUKTI . e($pay['bukti_transfer']) ?>" class="img-fluid rounded" onerror="this.src='<?= BASE_URL ?>assets/images/no-image.svg'"><p class="small mt-1"><?= e($pay['bukti_transfer']) ?></p><?php endif; ?>
             </div>
         </div>
         <?php endif; ?>

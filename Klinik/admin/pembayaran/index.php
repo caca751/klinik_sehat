@@ -12,7 +12,7 @@ require_once '../../includes/header_admin.php';
     <div class="card-header"><span><i class="fas fa-money-bill-wave me-2"></i>Daftar Pembayaran</span></div>
     <div class="card-body">
         <table id="table" class="table table-hover" style="width:100%">
-            <thead><tr><th>Kode Pesanan</th><th>Customer</th><th>Metode</th><th>Tujuan</th><th>Bukti</th><th>Tanggal</th><th>Status</th><th class="text-end">Aksi</th></tr></thead>
+            <thead><tr><th>Kode Pesanan</th><th>Customer</th><th>Metode</th><th>Tujuan</th><th>Tanggal</th><th>Status</th><th class="text-end">Aksi</th></tr></thead>
             <tbody>
             <?php foreach ($pays as $pb): ?>
                 <tr>
@@ -20,7 +20,6 @@ require_once '../../includes/header_admin.php';
                     <td><?= e($pb['nama']) ?></td>
                     <td><?= e($pb['nama_metode'] ?? '-') ?></td>
                     <td><?php if (!empty($pb['id_metode']) && !empty($pb['metode_nomor'])): ?><?= e($pb['metode_nomor']) ?> a.n. <?= e($pb['metode_pemilik']) ?><?php else: ?><span class="text-muted">-</span><?php endif; ?></td>
-                    <td><?php if ($pb['bukti_transfer']): ?><a href="<?= URL_BUKTI . e($pb['bukti_transfer']) ?>" target="_blank"><img src="<?= URL_BUKTI . e($pb['bukti_transfer']) ?>" class="img-thumb" onerror="this.src='<?= BASE_URL ?>assets/images/no-image.svg'"></a><?php else: ?><span class="text-muted">-</span><?php endif; ?></td>
                     <td><?= tgl_waktu($pb['tanggal_bayar']) ?></td>
                     <td><?= status_badge($pb['status']) ?></td>
                     <td class="text-end">

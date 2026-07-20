@@ -48,10 +48,9 @@ define('APP_ROOT', dirname(__DIR__));
 /* Folder upload */
 define('UPLOAD_OBAT', APP_ROOT . '/assets/images/obat/');
 define('UPLOAD_DOKTER', APP_ROOT . '/assets/images/dokter/');
-define('UPLOAD_BUKTI', APP_ROOT . '/uploads/bukti/');
 define('URL_OBAT', BASE_URL . 'assets/images/obat/');
 define('URL_DOKTER', BASE_URL . 'assets/images/dokter/');
-define('URL_BUKTI', BASE_URL . 'uploads/bukti/');
+// Note: upload/bukti removed — related constants deleted as proof upload is no longer used.
 
 /* Mulai session */
 if (session_status() === PHP_SESSION_NONE) {
