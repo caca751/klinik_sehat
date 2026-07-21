@@ -46,7 +46,7 @@ require_once '../../includes/header_admin.php';
         </div>
     </div>
     <div class="col-lg-4">
-        <div class="card sticky-summary">
+        <div class="card">
             <div class="card-header">Update Status</div>
             <div class="card-body">
                 <form method="post" action="<?= BASE_URL ?>admin/pesanan/proses.php">
