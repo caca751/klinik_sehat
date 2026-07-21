@@ -152,9 +152,17 @@ $kliniks = $pdo->query("SELECT k.*, kt.nama_kota FROM klinik k LEFT JOIN kota kt
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <div class="avatar rounded-circle overflow-hidden d-flex align-items-center justify-content-center"
      style="width:60px;height:60px;flex-shrink:0;">
-    <img src="<?= !empty($d['foto']) ? URL_DOKTER . e($d['foto']) : BASE_URL . 'assets/images/no-image.svg'; ?>"
-         alt="<?= e($d['nama_dokter']) ?>"
-         style="width:100%;height:100%;object-fit:cover;">
+    <?php
+        $foto_url = BASE_URL . 'assets/images/no-image.svg';
+        if (!empty($d['foto'])) {
+            if (file_exists(APP_ROOT . '/uploads/dokter/' . $d['foto'])) {
+                $foto_url = BASE_URL . 'uploads/dokter/' . e($d['foto']);
+            } elseif (file_exists(APP_ROOT . '/assets/images/dokter/' . $d['foto'])) {
+                $foto_url = BASE_URL . 'assets/images/dokter/' . e($d['foto']);
+            }
+        }
+    ?>
+    <img src="<?= $foto_url ?>" alt="<?= e($d['nama_dokter']) ?>" style="width:100%;height:100%;object-fit:cover;">
                             </div>
                             <div>
                                 <h6 class="mb-0 dokter-nama fw-bold"><?= e($d['nama_dokter']) ?></h6>
@@ -192,7 +200,7 @@ $kliniks = $pdo->query("SELECT k.*, kt.nama_kota FROM klinik k LEFT JOIN kota kt
     <div class="container py-4">
         <div class="text-center mb-5">
             <h2 class="section-title fw-bold">Data Klinik</h2>
-            <p class="section-subtitle">Berikut adalah jaringan klinik yang terdaftar di Klinik Sehat.</p>
+                <p class="section-subtitle">Berikut adalah jaringan klinik yang terdaftar di Klinik Sehat.</p>
         </div>
         <div id="klinikFilter" class="text-center mb-4" style="display:none;">
             <span class="filter-label"><i class="fas fa-filter me-1"></i> Filter: </span>
