@@ -157,7 +157,8 @@ require_once '../../includes/header_admin.php';
     </div></div>
 </div>
 <?php
-$extra_js = '<script>
+$extra_js = <<<'EOT'
+<script>
 $("#table").DataTable({responsive:true, language:{url:"https://cdn.datatables.net/plug-ins/1.13.8/i18n/id.json"}});
 $("#modalForm").on("show.bs.modal", function(e){
     var b = $(e.relatedTarget);
@@ -190,5 +191,6 @@ $("#modalDetail").on("show.bs.modal", function(e){
     $("#dNama").text(b.data("nama")); $("#dEmail").text(b.data("email")); $("#dHp").text(b.data("hp")); $("#dRole").text(b.data("role")); $("#dBirthdate").text(birthdate);
     $("#dAge").text(ageText); $("#dAlamat").text(b.data("alamat")); $("#dCreated").text(b.data("created"));
 });
-</script>';
+</script>
+EOT;
 require_once '../../includes/footer_admin.php';

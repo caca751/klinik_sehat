@@ -45,10 +45,10 @@ if (empty($rows)) { echo '<p class="text-muted">Tidak ada dokter ditemukan.</p>'
             <div class="card-body">
                 <div class="d-flex align-items-center gap-3 mb-2">
                     <div class="avatar rounded-circle overflow-hidden" style="width:60px;height:60px;">
-    <img src="<?= !empty($r['foto']) ? URL_DOKTER . e($r['foto']) : BASE_URL . 'assets/images/no-image.svg'; ?>"
-         alt="<?= e($r['nama_dokter']) ?>"
-         style="width:100%;height:100%;object-fit:cover;">
-                    </div>
+                    <img src="<?= !empty($r['foto']) ? URL_DOKTER . e($r['foto']) : BASE_URL . 'assets/images/no-image.svg'; ?>"
+                         alt="<?= e($r['nama_dokter']) ?>"
+                         style="width:100%;height:100%;object-fit:cover;">
+                                    </div>
                     <div>
                         <h6 class="mb-0"><?= e($r['nama_dokter']) ?></h6>
                         <small class="text-muted"><?= e($r['nama_spesialis']) ?></small>

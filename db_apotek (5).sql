@@ -655,12 +655,12 @@ CREATE TABLE `metode_pembayaran` (
 --
 
 INSERT INTO `metode_pembayaran` (`id_metode`, `nama_metode`, `tipe`, `nomor`, `pemilik`, `aktif`) VALUES
-(1, 'Transfer Bank BCA', 'bank', '1234567890', 'Clinic Sehat', 1),
-(2, 'Transfer Bank BNI', 'bank', '0987654321', 'Clinic Sehat', 1),
-(3, 'DANA', 'ewallet', '081234000001', 'Clinic Sehat', 1),
-(4, 'OVO', 'ewallet', '081234000002', 'Clinic Sehat', 1),
-(5, 'GoPay', 'ewallet', '081234000003', 'Clinic Sehat', 1),
-(6, 'QRIS', 'ewallet', '-', 'Clinic Sehat', 1);
+(1, 'Transfer Bank BCA', 'bank', '1234567890', 'Klinik Sehat', 1),
+(2, 'Transfer Bank BNI', 'bank', '0987654321', 'Klinik Sehat', 1),
+(3, 'DANA', 'ewallet', '081234000001', 'Klinik Sehat', 1),
+(4, 'OVO', 'ewallet', '081234000002', 'Klinik Sehat', 1),
+(5, 'GoPay', 'ewallet', '081234000003', 'Klinik Sehat', 1),
+(6, 'QRIS', 'ewallet', '-', 'Klinik Sehat', 1);
 
 -- --------------------------------------------------------
 
@@ -844,7 +844,7 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `id_pesanan`, `id_metode`, `bukti_tra
 
 CREATE TABLE `pengaturan` (
   `id` int(10) UNSIGNED NOT NULL DEFAULT 1,
-  `nama_app` varchar(100) DEFAULT 'Clinic Sehat',
+  `nama_app` varchar(100) DEFAULT 'Klinik Sehat',
   `email` varchar(100) DEFAULT NULL,
   `telepon` varchar(20) DEFAULT NULL,
   `alamat` text DEFAULT NULL
@@ -855,7 +855,7 @@ CREATE TABLE `pengaturan` (
 --
 
 INSERT INTO `pengaturan` (`id`, `nama_app`, `email`, `telepon`, `alamat`) VALUES
-(1, 'Clinic Sehat', NULL, NULL, NULL);
+(1, 'Klinik Sehat', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1065,7 +1065,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `password`, `no_hp`, `alamat`, `birthdate`, `role`, `created_at`) VALUES
-(1, 'Administrator', 'admin@apotek.com', '$2y$10$3Buaz.yIWtX4xAdA0o6AJOpSJxotottesd34OfWz4kAsWBrk.hOIu', '081234000001', 'Jl. Clinic Sehat No. 1, Jakarta', NULL, 'admin', '2025-01-01 08:00:00'),
+(1, 'Administrator', 'admin@apotek.com', '$2y$10$3Buaz.yIWtX4xAdA0o6AJOpSJxotottesd34OfWz4kAsWBrk.hOIu', '081234000001', 'Jl. Klinik Sehat No. 1, Jakarta', NULL, 'admin', '2025-01-01 08:00:00'),
 (2, 'Budi Santoso', 'budi@gmail.com', '$2y$10$l/u7HNgOAOyMRD7DRjMHieQVm.kq0WeGcPtfeOPuJNvQ75PlmYl2a', '081234000002', 'jnjbb', NULL, 'customer', '2025-02-03 09:15:00'),
 (3, 'Siti Rahayu', 'siti@gmail.com', '$2y$10$l/u7HNgOAOyMRD7DRjMHieQVm.kq0WeGcPtfeOPuJNvQ75PlmYl2a', '081234000003', 'Jl. Mawar No. 8, Surabaya', NULL, 'customer', '2025-02-10 10:00:00'),
 (4, 'Ahmad Fauzi', 'ahmad@gmail.com', '$2y$10$l/u7HNgOAOyMRD7DRjMHieQVm.kq0WeGcPtfeOPuJNvQ75PlmYl2a', '081234000004', 'Jl. Pahlawan No. 45, Yogyakarta', NULL, 'customer', '2025-03-01 11:30:00'),

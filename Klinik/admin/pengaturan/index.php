@@ -6,7 +6,7 @@ $active = 'pengaturan';
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS pengaturan (
     id INT UNSIGNED NOT NULL DEFAULT 1 PRIMARY KEY,
-    nama_app VARCHAR(100) DEFAULT 'Clinic Sehat',
+    nama_app VARCHAR(100) DEFAULT 'Klinik Sehat',
     email VARCHAR(100) DEFAULT NULL,
     telepon VARCHAR(20) DEFAULT NULL,
     alamat TEXT DEFAULT NULL
